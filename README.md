@@ -1,6 +1,6 @@
 # Atom StateGenny Preview package
 
-Shows the rendered sequence chart of the StateGenny to the right of the current editor when you press `ctrl-shift-G`.
+Shows the rendered finite state machine diagram of the StateGenny in your current editor window when you press `ctrl-shift-G`.
 
 Enabled for `.stategenny` files
 
@@ -8,7 +8,7 @@ Enabled for `.stategenny` files
 
 ## Features
 - **syntax highlighting**
-- **realtime rendering** of your sequence chart
+- **realtime rendering** of your state machine diagram
 - **SVG export** - to file or clipboard
 - **PNG export** - to file
 - Uses the pure javascript **[stategenny](https://gitlab.com/sverweij/state-genny)** package for parsing and rendering
