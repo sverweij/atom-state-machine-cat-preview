@@ -19,6 +19,5 @@ it as part of other free software, but _not_ as part of non free software.
 
 ## Build status
 [![Build Status](https://travis-ci.org/sverweij/atom-stategenny-preview.svg?branch=master)](https://travis-ci.org/sverweij/atom-stategenny-preview)
-[![Code Climate](https://codeclimate.com/github/sverweij/atom-stategenny-preview/badges/gpa.svg)](https://codeclimate.com/github/sverweij/atom-stategenny-preview)
 [![Dependency Status](https://david-dm.org/sverweij/atom-stategenny-preview.svg)](https://david-dm.org/sverweij/atom-stategenny-preview)
 [![devDependency Status](https://david-dm.org/sverweij/atom-stategenny-preview/dev-status.svg)](https://david-dm.org/sverweij/atom-stategenny-preview#info=devDependencies)
