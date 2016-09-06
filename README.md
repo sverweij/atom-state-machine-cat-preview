@@ -2,7 +2,7 @@
 
 Shows the rendered sequence chart of the StateGenny to the right of the current editor when you press `ctrl-shift-G`.
 
-Enabled for `.stategenny`, `.msc`, `.mscin`, `.xu`, and `.msgenny` files
+Enabled for `.stategenny` files
 
 ![animated gif demoing live preview of a simple sequence chart](https://raw.githubusercontent.com/sverweij/atom-stategenny-preview/master/assets/atom-stategenny-preview.png)
 
@@ -11,7 +11,7 @@ Enabled for `.stategenny`, `.msc`, `.mscin`, `.xu`, and `.msgenny` files
 - **realtime rendering** of your sequence chart
 - **SVG export** - to file or clipboard
 - **PNG export** - to file
-- Uses the pure javascript **[stategenny](https://gitlab.com/sverweij/state-genny) package for parsing and rendering
+- Uses the pure javascript **[stategenny](https://gitlab.com/sverweij/state-genny)** package for parsing and rendering
 
 ## License information
 This software is free software [licensed under GPL-3.0](LICENSE.md). This means (a.o.) you _can_ use
