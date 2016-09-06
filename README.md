@@ -4,7 +4,7 @@ Shows the rendered sequence chart of the StateGenny to the right of the current 
 
 Enabled for `.stategenny`, `.msc`, `.mscin`, `.xu`, and `.msgenny` files
 
-![animated gif demoing live preview of a simple sequence chart](https://raw.githubusercontent.com/sverweij/atom-stategenny-preview/master/assets/atom-stategenny-preview.gif)
+![animated gif demoing live preview of a simple sequence chart](https://raw.githubusercontent.com/sverweij/atom-stategenny-preview/master/assets/atom-stategenny-preview.png)
 
 ## Features
 - **syntax highlighting**
