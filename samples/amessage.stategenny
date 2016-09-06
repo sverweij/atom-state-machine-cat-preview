@@ -1,0 +1,6 @@
+# super simple FSM
+initial;
+
+initial => off;
+off => on: [switch flipped];
+on => off: [switch flipped];

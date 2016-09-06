@@ -1,0 +1,15 @@
+'.source.StateGenny':
+  'StateGenny skeleton':
+    prefix: 'fsm'
+    body: """
+
+    # a note for ${1:state_a}
+    ${1:state_a}: ${2:activities},
+    ${3:state_b}: ${4:activities};
+
+    // arcs
+    initial => ${1:state_a};
+    ${1:state_a} =>> ${3:state_b}: "${5:label}";
+    ${3:state_b} >> final: "${6:label}";
+    $7
+    """

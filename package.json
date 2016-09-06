@@ -1,0 +1,37 @@
+{
+  "name": "stategenny-preview",
+  "version": "0.1.0",
+  "main": "./lib/main",
+  "description": "Open a rendered state chart of the StateGenny in the current editor with `ctrl-shift-G`.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sverweij/atom-stategenny-preview"
+  },
+  "keywords": [
+    "stategenny",
+    "sequence chart",
+    "sequence diagram",
+    "preview"
+  ],
+  "license": "GPL-3.0",
+  "engines": {
+    "atom": "*"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "amdefine": "1.0.0",
+    "node-uuid": "1.4.7",
+    "atom-space-pen-views": "2.2.0",
+    "fs-plus": "2.9.1",
+    "underscore-plus": "1.6.6",
+    "stategenny": "git+https://gitlab.com/sverweij/state-genny"
+  },
+  "devDependencies": {
+    "coffeelint": "1.15.7",
+    "temp": "0.8.3",
+    "wrench": "1.5.9"
+  },
+  "bugs": {
+    "url": "https://github.com/sverweij/atom-stategenny-preview/issues"
+  }
+}
