@@ -1,4 +1,4 @@
-'.source.StateGenny':
+'.source.stategenny':
   'StateGenny skeleton':
     prefix: 'fsm'
     body: """
