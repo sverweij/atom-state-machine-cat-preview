@@ -2,14 +2,26 @@
   'StateGenny skeleton':
     prefix: 'fsm'
     body: """
-
+    // states
     # a note for ${1:state_a}
-    ${1:state_a}: ${2:activities},
-    ${3:state_b}: ${4:activities};
+    ${1:state_a},
+    ${3:state_b}: ${4:"activities"};
 
-    // arcs
+    // transitions
     initial => ${1:state_a};
-    ${1:state_a} =>> ${3:state_b}: "${5:label}";
-    ${3:state_b} >> final: "${6:label}";
-    $7
+    ${1:state_a} => ${3:state_b}: ${5:"label"};
+    $6
+    ${3:state_b} >> final;
+    """
+  'StateGenny transition':
+    prefix: 'tran'
+    body: """
+    ${1:from_state} => ${2:to_state}: ${3:"label"};
+    """
+  'StateGenny composite state':
+    prefix: 'comp'
+    body: """
+    ${1:composite_state} {
+      ${2:inner_state_from} => ${3:inner_state_to}: ${4:"label"};
+    }$5
     """
