@@ -168,9 +168,6 @@ class StateGennyPreviewView extends ScrollView
         @emitter.emit 'did-change-stategenny'
         @originalTrigger('stategenny-preview:msc-changed')
 
-
-
-
   getSVG: (callback)->
     @getSource().then (source) ->
       return unless source?
