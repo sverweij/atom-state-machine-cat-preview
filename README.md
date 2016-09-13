@@ -4,7 +4,7 @@ Shows the rendered finite state machine diagram of the StateGenny in your curren
 
 Enabled for `.stategenny` files
 
-![animated gif demoing live preview of a simple sequence chart](https://raw.githubusercontent.com/sverweij/atom-stategenny-preview/master/assets/atom-stategenny-preview.png)
+![animated gif demoing live preview of a simple sequence chart](https://raw.githubusercontent.com/sverweij/atom-stategenny-preview/master/assets/atom-stategenny-preview.gif)
 
 ## Features
 - **syntax highlighting**
