@@ -3,15 +3,15 @@ fs       = require 'fs-plus'
 path     = require 'path'
 renderer = null
 
-StateGennyPreviewView = null # Defer until used
+SmCatPreviewView = null # Defer until used
 
-createStateGennyPreviewView = (state) ->
-  StateGennyPreviewView ?= require './stategenny-preview-view'
-  new StateGennyPreviewView(state)
+createSmCatPreviewView = (state) ->
+  SmCatPreviewView ?= require './state-machine-cat-preview-view'
+  new SmCatPreviewView(state)
 
-isStateGennyPreviewView = (object) ->
-  StateGennyPreviewView ?= require './stategenny-preview-view'
-  object instanceof StateGennyPreviewView
+isSmCatPreviewView = (object) ->
+  SmCatPreviewView ?= require './state-machine-cat-preview-view'
+  object instanceof SmCatPreviewView
 
 module.exports =
   config:
@@ -28,17 +28,17 @@ module.exports =
 
   activate: ->
     atom.deserializers.add
-      name: 'StateGennyPreviewView'
+      name: 'SmCatPreviewView'
       deserialize: (state) ->
         if state.editorId or fs.isFileSync(state.filePath)
-          createStateGennyPreviewView(state)
+          createSmCatPreviewView(state)
 
     atom.commands.add 'atom-workspace',
-      'stategenny-preview:toggle': =>
+      'state-machine-cat-preview:toggle': =>
         @toggle()
 
     # previewFile = @previewFile.bind(this)
-    # atom.commands.add '.tree-view .file .name[data-name$=\\.mscgen]', 'stategenny-preview:preview-file', previewFile
+    # atom.commands.add '.tree-view .file .name[data-name$=\\.smcat]', 'state-machine-cat-preview:preview-file', previewFile
 
     atom.workspace.addOpener (uriToOpen) ->
       try
@@ -46,7 +46,7 @@ module.exports =
       catch error
         return
 
-      return unless protocol is 'stategenny-preview:'
+      return unless protocol is 'state-machine-cat-preview:'
 
       try
         pathname = decodeURI(pathname) if pathname
@@ -54,12 +54,12 @@ module.exports =
         return
 
       if host is 'editor'
-        createStateGennyPreviewView(editorId: pathname.substring(1))
+        createSmCatPreviewView(editorId: pathname.substring(1))
       else
-        createStateGennyPreviewView(filePath: pathname)
+        createSmCatPreviewView(filePath: pathname)
 
   isActionable: ->
-    if isStateGennyPreviewView(atom.workspace.getActivePaneItem())
+    if isSmCatPreviewView(atom.workspace.getActivePaneItem())
       atom.workspace.destroyActivePaneItem()
       return
 
@@ -67,7 +67,7 @@ module.exports =
     return unless editor?
 
     grammars = [
-      'source.stategenny'
+      'source.smcat'
     ]
     return unless editor.getGrammar().scopeName in grammars
 
@@ -78,7 +78,7 @@ module.exports =
     @addPreviewForEditor(editor) unless @removePreviewForEditor(editor)
 
   uriForEditor: (editor) ->
-    "stategenny-preview://editor/#{editor.id}"
+    "state-machine-cat-preview://editor/#{editor.id}"
 
   removePreviewForEditor: (editor) ->
     uri = @uriForEditor(editor)
@@ -94,10 +94,10 @@ module.exports =
     previousActivePane = atom.workspace.getActivePane()
     options =
       searchAllPanes: true
-    if atom.config.get('stategenny-preview.openPreviewInSplitPane')
+    if atom.config.get('state-machine-cat-preview.openPreviewInSplitPane')
       options.split = 'right'
     atom.workspace.open(uri, options).then (mscgenPreviewView) ->
-      if isStateGennyPreviewView(mscgenPreviewView)
+      if isSmCatPreviewView(mscgenPreviewView)
         previousActivePane.activate()
 
   # previewFile: ({target}) ->
@@ -108,4 +108,4 @@ module.exports =
   #     @addPreviewForEditor(editor)
   #     return
   #
-  #   atom.workspace.open "stategenny-preview://#{encodeURI(filePath)}", searchAllPanes: true
+  #   atom.workspace.open "state-machine-cat-preview://#{encodeURI(filePath)}", searchAllPanes: true

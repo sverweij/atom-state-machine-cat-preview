@@ -1,1 +1,1 @@
-See [atom-stategenny-preview releases](https://github.com/sverweij/atom-stategenny-preview/releases) on GitHub.
+See [atom-state-machine-cat-preview releases](https://github.com/sverweij/atom-state-machine-cat-preview/releases) on GitHub.

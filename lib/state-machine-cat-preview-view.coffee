@@ -13,9 +13,9 @@ latestKnownEditorId  = null
 svgWrapperElementId  = null
 
 module.exports =
-class StateGennyPreviewView extends ScrollView
+class SmCatPreviewView extends ScrollView
   @content: ->
-    @div class: 'stategenny-preview native-key-bindings', tabindex: -1
+    @div class: 'state-machine-cat-preview native-key-bindings', tabindex: -1
 
   constructor: ({@editorId, @filePath}) ->
     super
@@ -38,7 +38,7 @@ class StateGennyPreviewView extends ScrollView
           @subscribeToFilePath(@filePath)
 
   serialize: ->
-    deserializer: 'StateGennyPreviewView'
+    deserializer: 'SmCatPreviewView'
     filePath: @getPath() ? @filePath
     editorId: @editorId
 
@@ -53,7 +53,7 @@ class StateGennyPreviewView extends ScrollView
     new Disposable
 
   onDidChangeMsc: (callback) ->
-    @emitter.on 'did-change-stategenny', callback
+    @emitter.on 'did-change-smcat', callback
 
   subscribeToFilePath: (filePath) ->
     @file = new File(filePath)
@@ -96,18 +96,18 @@ class StateGennyPreviewView extends ScrollView
       'core:save-as': (event) =>
         event.stopPropagation()
         @saveAs('svg')
-      'stategenny-preview:save-as-png': (event) =>
+      'state-machine-cat-preview:save-as-png': (event) =>
         event.stopPropagation()
         @saveAs('png')
       'core:copy': (event) =>
         event.stopPropagation() if @copyToClipboard()
-      'stategenny-preview:zoom-in': =>
+      'state-machine-cat-preview:zoom-in': =>
         zoomLevel = parseFloat(@css('zoom')) or 1
         @css('zoom', zoomLevel + .1)
-      'stategenny-preview:zoom-out': =>
+      'state-machine-cat-preview:zoom-out': =>
         zoomLevel = parseFloat(@css('zoom')) or 1
         @css('zoom', zoomLevel - .1)
-      'stategenny-preview:reset-zoom': =>
+      'state-machine-cat-preview:reset-zoom': =>
         @css('zoom', 1)
 
     changeHandler = =>
@@ -122,12 +122,12 @@ class StateGennyPreviewView extends ScrollView
       @disposables.add @file.onDidChange(changeHandler)
     else if @editor?
       @disposables.add @editor.getBuffer().onDidStopChanging ->
-        changeHandler() if atom.config.get 'stategenny-preview.liveUpdate'
+        changeHandler() if atom.config.get 'state-machine-cat-preview.liveUpdate'
       @disposables.add @editor.onDidChangePath => @emitter.emit 'did-change-title'
       @disposables.add @editor.getBuffer().onDidSave ->
-        changeHandler() unless atom.config.get 'stategenny-preview.liveUpdate'
+        changeHandler() unless atom.config.get 'state-machine-cat-preview.liveUpdate'
       @disposables.add @editor.getBuffer().onDidReload ->
-        changeHandler() unless atom.config.get 'stategenny-preview.liveUpdate'
+        changeHandler() unless atom.config.get 'state-machine-cat-preview.liveUpdate'
 
   renderMsc: ->
     @showLoading() unless @loaded
@@ -165,8 +165,8 @@ class StateGennyPreviewView extends ScrollView
         @loaded = true
         @svg = svg # HACK
         @html("<div id=#{svgWrapperElementId}>#{svg}</div>")
-        @emitter.emit 'did-change-stategenny'
-        @originalTrigger('stategenny-preview:msc-changed')
+        @emitter.emit 'did-change-smcat'
+        @originalTrigger('state-machine-cat-preview:msc-changed')
 
   getSVG: (callback)->
     @getSource().then (source) ->
@@ -187,9 +187,9 @@ class StateGennyPreviewView extends ScrollView
 
   getURI: ->
     if @file?
-      "stategenny-preview://#{@getPath()}"
+      "state-machine-cat-preview://#{@getPath()}"
     else
-      "stategenny-preview://editor/#{@editorId}"
+      "state-machine-cat-preview://editor/#{@editorId}"
 
   getPath: ->
     if @file?

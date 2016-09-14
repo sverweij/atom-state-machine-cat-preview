@@ -1,5 +1,5 @@
-'.source.stategenny':
-  'StateGenny skeleton':
+'.source.smcat':
+  'smcat skeleton':
     prefix: 'fsm'
     body: """
     // states
@@ -13,12 +13,12 @@
     $6
     ${3:state_b} >> final;
     """
-  'StateGenny transition':
+  'smcat transition':
     prefix: 'tran'
     body: """
     ${1:from_state} => ${2:to_state}: ${3:"label"};
     """
-  'StateGenny composite state':
+  'smcat composite state':
     prefix: 'comp'
     body: """
     ${1:composite_state} {

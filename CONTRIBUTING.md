@@ -1,6 +1,6 @@
 ## Contributing
 
-So you want to contribute to the atom stategenny previewer? We already love you!
+So you want to contribute to the atom state-machine-cat previewer? We already love you!
 
 To make this as easy as possible for you, here's some simple guidelines:
 
@@ -8,7 +8,7 @@ To make this as easy as possible for you, here's some simple guidelines:
 - All **issues** are **welcome**.    
   - These include bug reports, questions, feature requests and enhancement
     proposals
-  - [GitHub's issue tracker](https://github.com/sverweij/atom-stategenny-preview/issues)
+  - [GitHub's issue tracker](https://github.com/sverweij/atom-state-machine-cat-preview/issues)
     is the easiest way to submit them.
 - We prefer bug reports in  **_steps taken_ - _expected_ - _found_** format.
   - That makes it more easy to reproduce it, and concoct a solution that fits
@@ -30,12 +30,12 @@ To make this as easy as possible for you, here's some simple guidelines:
     - Code style fits in with the current code base:
     - Additions pass coffeelint.
 - Plan to do something drastic?     
-  Contact @SanderSpeaks on Twitter, or leave an [issue](https://github.com/sverweij/atom-stategenny-preview/issues/new) on GitHub
+  Contact @SanderSpeaks on Twitter, or leave an [issue](https://github.com/sverweij/atom-state-machine-cat-preview/issues/new) on GitHub
 
 ### Legal
 - the code you add will be subject to
-  [GPLv3](wikum/licenses/license.stategenny_js.md), just like the rest of
-  atom-stategenny-preview
+  [GPLv3](LICENSE.md), just like the rest of
+  atom-state-machine-cat-preview
 - the code you add is your own original work
 
 ### Issue template

@@ -1,0 +1,16 @@
+'atom-workspace, atom-workspace atom-text-editor':
+  'ctrl-G': 'state-machine-cat-preview:toggle'
+
+'.platform-darwin .state-machine-cat-preview':
+  'cmd-+': 'state-machine-cat-preview:zoom-in'
+  'cmd-=': 'state-machine-cat-preview:zoom-in'
+  'cmd--': 'state-machine-cat-preview:zoom-out'
+  'cmd-_': 'state-machine-cat-preview:zoom-out'
+  'cmd-0': 'state-machine-cat-preview:reset-zoom'
+
+'.platform-win32 .state-machine-cat-preview, .platform-linux .state-machine-cat-preview':
+  'ctrl-+': 'state-machine-cat-preview:zoom-in'
+  'ctrl-=': 'state-machine-cat-preview:zoom-in'
+  'ctrl--': 'state-machine-cat-preview:zoom-out'
+  'ctrl-_': 'state-machine-cat-preview:zoom-out'
+  'ctrl-0': 'state-machine-cat-preview:reset-zoom'

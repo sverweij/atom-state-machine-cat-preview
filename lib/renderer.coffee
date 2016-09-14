@@ -1,10 +1,10 @@
-stategenny    = null # Defer until used
+smcat = null # Defer until used
 
 exports.render = (pScript='', pCallback) ->
-  stategenny ?= require 'stategenny'
+  smcat ?= require 'state-machine-cat'
 
   lOptions =
-    inputType  : 'stategenny'
+    inputType  : 'smcat'
     outputType : 'svg'
 
-  stategenny.render pScript, lOptions, pCallback
+  smcat.render pScript, lOptions, pCallback

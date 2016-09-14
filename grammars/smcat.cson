@@ -1,9 +1,9 @@
-name: "StateGenny"
-scopeName: "source.stategenny"
+scopeName: "source.smcat"
+name: "State Machine Cat"
 foldingStartMarker: "{s*$"
 foldingStopMarker: "^s*}"
 fileTypes: [
-  "stategenny"
+  "smcat"
 ]
 patterns: [
   {
@@ -28,34 +28,34 @@ patterns: [
 repository:
   punctuation:
     match: "(,|;)"
-    name: "punctuation.separator.stategenny"
+    name: "punctuation.separator.smcat"
   illegalalien:
     comment: "include as last pattern to declare everything different from spaces illegal"
     match: "\\S"
-    name: "invalid.illegal.stategenny"
+    name: "invalid.illegal.smcat"
   commentBlock:
     comment: "e.g. /* yadda */"
     begin: "/\\*"
     captures:
       "0":
-        name: "punctuation.definition.comment.stategenny"
+        name: "punctuation.definition.comment.smcat"
     end: "\\*/"
-    name: "comment.block.stategenny"
+    name: "comment.block.smcat"
   commentLineSlash:
     comment: "e.g. // yadda"
     begin: "(^[ \\t]+)?(?=//)"
     beginCaptures:
       "1":
-        name: "punctuation.whitespace.comment.leading.stategenny"
+        name: "punctuation.whitespace.comment.leading.smcat"
     end: "(?!\\G)"
     patterns: [
       {
         begin: "//"
         beginCaptures:
           "0":
-            name: "punctuation.definition.comment.stategenny"
+            name: "punctuation.definition.comment.smcat"
         end: "\\n"
-        name: "comment.line.double-slash.stategenny"
+        name: "comment.line.double-slash.smcat"
       }
     ]
   commentLineHash:
@@ -63,16 +63,16 @@ repository:
     begin: "(^[ \\t]+)?(?=#)"
     beginCaptures:
       "1":
-        name: "punctuation.whitespace.comment.leading.stategenny"
+        name: "punctuation.whitespace.comment.leading.smcat"
     end: "(?!\\G)"
     patterns: [
       {
         begin: "#"
         beginCaptures:
           "0":
-            name: "punctuation.definition.comment.stategenny"
+            name: "punctuation.definition.comment.smcat"
         end: "\\n"
-        name: "comment.line.number-sign.stategenny"
+        name: "comment.line.number-sign.smcat"
       }
     ]
   comment:
@@ -90,19 +90,19 @@ repository:
   identifier:
     patterns: [
       {
-        comment: "identifier - bare bones. In stategenny * (\"every state\") can be used as a special identifier as well"
+        comment: "identifier - bare bones. In smcat * (\"every state\") can be used as a special identifier as well"
         match: "([^;, \\\"\\t\\n\\r=\\-><:\\{\\*])+|(\\*)"
-        name: "variable.identifier.stategenny"
+        name: "variable.identifier.smcat"
       }
       {
         comment: "identifer - quoted. Basically a string, but we can't duplicate that"
         begin: "\""
         end: "\""
-        name: "variable.identifier.stategenny"
+        name: "variable.identifier.smcat"
         patterns: [
           {
             match: "\\\\."
-            name: "constant.character.escape.stategenny"
+            name: "constant.character.escape.smcat"
           }
         ]
       }
@@ -111,16 +111,16 @@ repository:
     begin: "\""
     beginCaptures:
       "0":
-        name: "punctuation.definition.string.begin.stategenny"
+        name: "punctuation.definition.string.begin.smcat"
     end: "\""
     endCaptures:
       "0":
-        name: "punctuation.definition.string.end.stategenny"
-    name: "string.quoted.double.stategenny"
+        name: "punctuation.definition.string.end.smcat"
+    name: "string.quoted.double.smcat"
     patterns: [
       {
         match: "\\\\."
-        name: "constant.character.escape.stategenny"
+        name: "constant.character.escape.smcat"
       }
     ]
   transitionType:
@@ -128,18 +128,18 @@ repository:
       {
         comment: "relation - symbols"
         match: "(--|==|->|=>>|=>|>>|:>|<-|<<=|<=|<<|<:)"
-        name: "storage.type.stategenny"
+        name: "storage.type.smcat"
       }
     ]
   attributelist:
     begin: ":"
     beginCaptures:
       "0":
-        name: "punctuation.attributelist.start.stategenny"
+        name: "punctuation.attributelist.start.smcat"
     end: "(;|,|\\{)"
     endCaptures:
       "0":
-        name: "punctuation.attributelist.end.stategenny"
+        name: "punctuation.attributelist.end.smcat"
     patterns: [
       {
         include: "#comment"
@@ -156,20 +156,20 @@ repository:
       }
       {
         match: "\\\\."
-        name: "constant.character.escape.stategenny"
+        name: "constant.character.escape.smcat"
       }
     ]
   inlineblock:
     begin: "\\{"
     beginCaptures:
       "0":
-        name: "punctuation.definition.inlineblock.start.stategenny"
+        name: "punctuation.definition.inlineblock.start.smcat"
     end: "(\\})(;)"
     endCaptures:
       "1":
-        name: "punctuation.definition.inlineblock.end.stategenny"
+        name: "punctuation.definition.inlineblock.end.smcat"
       "2":
-        name: "punctuation.separator.inlineblock.end.stategenny"
+        name: "punctuation.separator.inlineblock.end.smcat"
     patterns: [
       {
         include: "#identifier"

@@ -1,4 +1,4 @@
-atom-mscgen-preview - Atom previewer for StateGenny state charts
+atom-state-machine-cat-preview - Atom previewer for smcat state charts
 
 Copyright (C) 2016 Sander Verweij
 

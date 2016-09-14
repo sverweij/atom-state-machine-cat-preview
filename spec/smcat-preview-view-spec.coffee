@@ -1,25 +1,25 @@
-path              = require 'path'
-fs                = require 'fs-plus'
-temp              = require 'temp'
-wrench            = require 'wrench'
-StateGennyPreviewView = require '../lib/stategenny-preview-view'
+path             = require 'path'
+fs               = require 'fs-plus'
+temp             = require 'temp'
+wrench           = require 'wrench'
+SmCatPreviewView = require '../lib/state-machine-cat-preview-view'
 
-describe "StateGennyPreviewView", ->
+describe "SmCatPreviewView", ->
   [file, preview, workspaceElement] = []
 
   beforeEach ->
-    filePath = atom.project.getDirectories()[0].resolve('subdir/asample.stategenny')
-    preview = new StateGennyPreviewView({filePath})
+    filePath = atom.project.getDirectories()[0].resolve('subdir/asample.smcat')
+    preview = new SmCatPreviewView({filePath})
     jasmine.attachToDOM(preview.element)
 
     waitsForPromise ->
-      atom.packages.activatePackage("stategenny-preview")
+      atom.packages.activatePackage("state-machine-cat-preview")
 
   afterEach ->
     preview.destroy()
 
   describe "::constructor", ->
-    it "shows a loading spinner and renders the stategenny", ->
+    it "shows a loading spinner and renders the smcat", ->
       preview.showLoading()
       expect(preview.find('.msc-spinner')).toExist()
 
@@ -39,11 +39,11 @@ describe "StateGennyPreviewView", ->
       expect(newPreview.getPath()).toBe preview.getPath()
 
     it "does not recreate a preview when the file no longer exists", ->
-      filePath = path.join(temp.mkdirSync('stategenny-preview-'), 'foo.stategenny')
+      filePath = path.join(temp.mkdirSync('state-machine-cat-preview-'), 'foo.smcat')
       fs.writeFileSync(filePath, '# Hi')
 
       preview.destroy()
-      preview = new StateGennyPreviewView({filePath})
+      preview = new SmCatPreviewView({filePath})
       serialized = preview.serialize()
       fs.removeSync(filePath)
 
@@ -54,10 +54,10 @@ describe "StateGennyPreviewView", ->
       preview.destroy()
 
       waitsForPromise ->
-        atom.workspace.open('new.stategenny')
+        atom.workspace.open('new.smcat')
 
       runs ->
-        preview = new StateGennyPreviewView({editorId: atom.workspace.getActiveTextEditor().id})
+        preview = new SmCatPreviewView({editorId: atom.workspace.getActiveTextEditor().id})
 
         jasmine.attachToDOM(preview.element)
         expect(preview.getPath()).toBe atom.workspace.getActiveTextEditor().getPath()
@@ -83,9 +83,9 @@ describe "StateGennyPreviewView", ->
       previewPaneItem = null
 
       waitsForPromise ->
-        atom.workspace.open('subdir/序列圖.stategenny')
+        atom.workspace.open('subdir/序列圖.smcat')
       runs ->
-        atom.commands.dispatch workspaceElement, 'stategenny-preview:toggle'
+        atom.commands.dispatch workspaceElement, 'state-machine-cat-preview:toggle'
       waitsFor ->
         previewPaneItem = atom.workspace.getPanes()[1].getActiveItem()
       runs ->
@@ -113,9 +113,9 @@ describe "StateGennyPreviewView", ->
       previewPaneItem = null
 
       waitsForPromise ->
-        atom.workspace.open('subdir/序列圖.stategenny')
+        atom.workspace.open('subdir/序列圖.smcat')
       runs ->
-        atom.commands.dispatch workspaceElement, 'stategenny-preview:toggle'
+        atom.commands.dispatch workspaceElement, 'state-machine-cat-preview:toggle'
       waitsFor ->
         previewPaneItem = atom.workspace.getPanes()[1].getActiveItem()
       runs ->
@@ -134,14 +134,14 @@ describe "StateGennyPreviewView", ->
       previewPaneItem = null
 
       waitsForPromise ->
-        atom.workspace.open('subdir/序列圖.stategenny')
+        atom.workspace.open('subdir/序列圖.smcat')
       runs ->
-        atom.commands.dispatch workspaceElement, 'stategenny-preview:toggle'
+        atom.commands.dispatch workspaceElement, 'state-machine-cat-preview:toggle'
       waitsFor ->
         previewPaneItem = atom.workspace.getPanes()[1].getActiveItem()
       runs ->
         spyOn(atom, 'showSaveDialogSync').andReturn(outputPath)
-        atom.commands.dispatch previewPaneItem.element, 'stategenny-preview:save-as-png'
+        atom.commands.dispatch previewPaneItem.element, 'state-machine-cat-preview:save-as-png'
       waitsFor ->
         fs.existsSync(outputPath)
 
