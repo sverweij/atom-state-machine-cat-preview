@@ -1,4 +1,4 @@
-# Atom State Machine Cat Preview package
+# Atom _State Machine Cat_ Preview package
 
 Shows the rendered finite state machine diagram of the smcat in your current editor window when you press `ctrl-shift-G`.
 
