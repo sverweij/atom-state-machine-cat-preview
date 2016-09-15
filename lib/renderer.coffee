@@ -6,5 +6,6 @@ exports.render = (pScript='', pCallback) ->
   lOptions =
     inputType  : 'smcat'
     outputType : 'svg'
+    engine     : atom.config.get('state-machine-cat-preview.layoutEngine') or 'dot'
 
   smcat.render pScript, lOptions, pCallback

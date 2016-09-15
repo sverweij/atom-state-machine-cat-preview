@@ -25,6 +25,20 @@ module.exports =
       default: true
       order: 2
       description: 'Open the preview in a split pane. If disabled, the preview is opened in a new tab in the same pane.'
+    layoutEngine:
+      type: 'string'
+      default: 'dot'
+      order: 3
+      description:
+        """
+          The engine smcat uses to layout the diagram. **dot** delivers the
+          best results.
+
+          In some edge cases other engines perform better. Note that
+          only _dot_, _fdp_ and _osage_ understand composite state machines.
+        """
+      # declared localy instead of from smcat.getAllowedValues to prevent a startup time penalty
+      enum: ['dot', 'circo', 'fdp', 'neato', 'osage', 'twopi']
 
   activate: ->
     atom.deserializers.add
