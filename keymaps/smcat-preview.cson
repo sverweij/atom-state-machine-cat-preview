@@ -1,5 +1,5 @@
-'atom-workspace, atom-workspace atom-text-editor':
-  'ctrl-G': 'state-machine-cat-preview:toggle'
+'atom-workspace atom-text-editor:not(.mini)[data-grammar~="smcat"]':
+  'ctrl-V': 'state-machine-cat-preview:toggle'
 
 '.platform-darwin .state-machine-cat-preview':
   'cmd-+': 'state-machine-cat-preview:zoom-in'
