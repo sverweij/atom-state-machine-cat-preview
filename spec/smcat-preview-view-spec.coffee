@@ -21,10 +21,10 @@ describe "SmCatPreviewView", ->
   describe "::constructor", ->
     it "shows a loading spinner and renders the smcat", ->
       preview.showLoading()
-      expect(preview.find('.msc-spinner')).toExist()
+      expect(preview.find('.smcat-spinner')).toExist()
 
       waitsForPromise ->
-        preview.renderMsc()
+        preview.renderSMCat()
 
   describe "serialization", ->
     newPreview = null

@@ -52,14 +52,14 @@ class SmCatPreviewView extends ScrollView
     # No op to suppress deprecation warning
     new Disposable
 
-  onDidChangeMsc: (callback) ->
+  onDidChangeSMCat: (callback) ->
     @emitter.on 'did-change-smcat', callback
 
   subscribeToFilePath: (filePath) ->
     @file = new File(filePath)
     @emitter.emit 'did-change-title'
     @handleEvents()
-    @renderMsc()
+    @renderSMCat()
 
   resolveEditor: (editorId) ->
     resolve = =>
@@ -68,7 +68,7 @@ class SmCatPreviewView extends ScrollView
       if @editor?
         @emitter.emit 'did-change-title' if @editor?
         @handleEvents()
-        @renderMsc()
+        @renderSMCat()
       else
         # The editor this preview was created for has been closed so close
         # this preview since a preview cannot be rendered without an editor
@@ -85,8 +85,8 @@ class SmCatPreviewView extends ScrollView
     null
 
   handleEvents: ->
-    @disposables.add atom.grammars.onDidAddGrammar => _.debounce((=> @renderMsc()), 250)
-    @disposables.add atom.grammars.onDidUpdateGrammar _.debounce((=> @renderMsc()), 250)
+    @disposables.add atom.grammars.onDidAddGrammar => _.debounce((=> @renderSMCat()), 250)
+    @disposables.add atom.grammars.onDidUpdateGrammar _.debounce((=> @renderSMCat()), 250)
 
     atom.commands.add @element,
       'core:move-up': =>
@@ -111,7 +111,7 @@ class SmCatPreviewView extends ScrollView
         @css('zoom', 1)
 
     changeHandler = =>
-      @renderMsc()
+      @renderSMCat()
 
       # TODO: Remove paneForURI call when ::paneForItem is released
       pane = atom.workspace.paneForItem?(this) ? atom.workspace.paneForURI(@getURI())
@@ -129,9 +129,9 @@ class SmCatPreviewView extends ScrollView
       @disposables.add @editor.getBuffer().onDidReload ->
         changeHandler() unless atom.config.get 'state-machine-cat-preview.liveUpdate'
 
-  renderMsc: ->
+  renderSMCat: ->
     @showLoading() unless @loaded
-    @getSource().then (source) => @renderMscText(source) if source?
+    @getSource().then (source) => @renderSMCatText(source) if source?
 
   getSource: ->
     if @file?.getPath()
@@ -141,7 +141,7 @@ class SmCatPreviewView extends ScrollView
     else
       Promise.resolve(null)
 
-  renderMscText: (text) ->
+  renderSMCatText: (text) ->
     uuid ?= require 'node-uuid'
     # should be unique within atom to prevent duplicate id's within the
     # editor (which renders the stuff into the first element only)
@@ -166,7 +166,7 @@ class SmCatPreviewView extends ScrollView
         @svg = svg # HACK
         @html("<div id=#{svgWrapperElementId}>#{svg}</div>")
         @emitter.emit 'did-change-smcat'
-        @originalTrigger('state-machine-cat-preview:msc-changed')
+        @originalTrigger('state-machine-cat-preview:smcat-changed')
 
   getSVG: (callback)->
     @getSource().then (source) ->
@@ -176,14 +176,14 @@ class SmCatPreviewView extends ScrollView
 
   getTitle: ->
     if @file?
-      "#{path.basename(@getPath())} Preview"
+      "#{path.basename(@getPath())} preview"
     else if @editor?
-      "#{@editor.getTitle()} Preview"
+      "#{@editor.getTitle()} preview"
     else
-      "Msc Preview"
+      "SM Cat Preview"
 
   getIconName: ->
-    "Msc"
+    "SMCat"
 
   getURI: ->
     if @file?
@@ -212,7 +212,7 @@ class SmCatPreviewView extends ScrollView
   showLoading: ->
     @loading = true
     @html $$$ ->
-      @div class: 'msc-spinner', 'Loading chart\u2026'
+      @div class: 'smcat-spinner', 'Rendering state chart\u2026'
 
   copyToClipboard: ->
     return false if @loading or not @svg

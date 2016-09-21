@@ -181,11 +181,11 @@ describe "smcat preview package", ->
         preview = atom.workspace.getActivePaneItem()
         expect(preview).toBeInstanceOf(SmCatPreviewView)
 
-        spyOn(preview, 'renderMscText')
+        spyOn(preview, 'renderSMCatText')
         preview.file.emitter.emit('did-change')
 
       waitsFor "smcat to be re-rendered after file changed", ->
-        preview.renderMscText.callCount > 0
+        preview.renderSMCatText.callCount > 0
 
   describe "when the editor's path changes on #win32 and #darwin", ->
     it "updates the preview's title", ->
@@ -197,12 +197,12 @@ describe "smcat preview package", ->
       expectPreviewInSplitPane()
 
       runs ->
-        expect(preview.getTitle()).toBe 'atest.smcat Preview'
+        expect(preview.getTitle()).toBe 'atest.smcat preview'
         preview.onDidChangeTitle(titleChangedCallback)
         fs.renameSync(atom.workspace.getActiveTextEditor().getPath(), path.join(path.dirname(atom.workspace.getActiveTextEditor().getPath()), 'atest2.smcat'))
 
       waitsFor ->
-        preview.getTitle() is "atest2.smcat Preview"
+        preview.getTitle() is "atest2.smcat preview"
 
       runs ->
         expect(titleChangedCallback).toHaveBeenCalled()

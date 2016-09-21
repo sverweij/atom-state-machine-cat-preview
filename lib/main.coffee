@@ -110,8 +110,8 @@ module.exports =
       searchAllPanes: true
     if atom.config.get('state-machine-cat-preview.openPreviewInSplitPane')
       options.split = 'right'
-    atom.workspace.open(uri, options).then (mscgenPreviewView) ->
-      if isSmCatPreviewView(mscgenPreviewView)
+    atom.workspace.open(uri, options).then (SMCatPreviewView) ->
+      if isSmCatPreviewView(SMCatPreviewView)
         previousActivePane.activate()
 
   # previewFile: ({target}) ->
