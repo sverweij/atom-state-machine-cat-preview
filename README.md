@@ -1,5 +1,7 @@
 # Atom _State Machine Cat_ Preview package
 
+Write beautiful state charts. 
+
 Shows the rendered finite state machine diagram of the smcat in your current editor window when you press `ctrl-shift-V`.
 
 Enabled for `.smcat` files
