@@ -2,7 +2,7 @@
   "name": "state-machine-cat-preview",
   "version": "1.0.3",
   "main": "./lib/main",
-  "description": "Open a rendered state chart of the smcat in the current editor with `ctrl-shift-G`.",
+  "description": "Write beautiful state charts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sverweij/atom-state-machine-cat-preview"
@@ -26,7 +26,7 @@
     "atom-space-pen-views": "2.2.0",
     "fs-plus": "2.9.1",
     "underscore-plus": "1.6.6",
-    "state-machine-cat": "1.0.3"
+    "state-machine-cat": "1.0.4"
   },
   "devDependencies": {
     "coffeelint": "1.15.7",
