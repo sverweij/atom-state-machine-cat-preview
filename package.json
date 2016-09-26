@@ -24,9 +24,9 @@
     "amdefine": "1.0.0",
     "node-uuid": "1.4.7",
     "atom-space-pen-views": "2.2.0",
-    "fs-plus": "2.9.1",
+    "fs-plus": "2.9.2",
     "underscore-plus": "1.6.6",
-    "state-machine-cat": "1.0.4"
+    "state-machine-cat": "1.0.5"
   },
   "devDependencies": {
     "coffeelint": "1.15.7",
