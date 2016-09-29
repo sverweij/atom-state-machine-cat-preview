@@ -1,6 +1,6 @@
 {
   "name": "state-machine-cat-preview",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "main": "./lib/main",
   "description": "Write beautiful state charts",
   "repository": {
