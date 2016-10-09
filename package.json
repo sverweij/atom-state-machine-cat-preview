@@ -28,7 +28,7 @@
     "state-machine-cat": "1.0.6"
   },
   "devDependencies": {
-    "coffeelint": "1.15.7",
+    "coffeelint": "1.16.0",
     "temp": "0.8.3",
     "wrench": "1.5.9"
   },
