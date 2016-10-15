@@ -1,7 +1,6 @@
 path             = require 'path'
 fs               = require 'fs-plus'
 temp             = require 'temp'
-wrench           = require 'wrench'
 SmCatPreviewView = require '../lib/state-machine-cat-preview-view'
 
 describe "SmCatPreviewView", ->
@@ -70,7 +69,7 @@ describe "SmCatPreviewView", ->
     beforeEach ->
       fixturesPath = path.join(__dirname, 'fixtures')
       tempPath = temp.mkdirSync('atom')
-      wrench.copyDirSyncRecursive(fixturesPath, tempPath, forceDelete: true)
+      fs.copySync(fixturesPath, tempPath)
       atom.project.setPaths([tempPath])
 
       jasmine.useRealClock()
@@ -102,7 +101,7 @@ describe "SmCatPreviewView", ->
     beforeEach ->
       fixturesPath = path.join(__dirname, 'fixtures')
       tempPath = temp.mkdirSync('atom')
-      wrench.copyDirSyncRecursive(fixturesPath, tempPath, forceDelete: true)
+      fs.copySync(fixturesPath, tempPath)
       atom.project.setPaths([tempPath])
 
       jasmine.useRealClock()
@@ -154,7 +153,7 @@ describe "SmCatPreviewView", ->
     beforeEach ->
       fixturesPath = path.join(__dirname, 'fixtures')
       tempPath = temp.mkdirSync('atom')
-      wrench.copyDirSyncRecursive(fixturesPath, tempPath, forceDelete: true)
+      fs.copySync(fixturesPath, tempPath)
       atom.project.setPaths([tempPath])
 
       jasmine.useRealClock()

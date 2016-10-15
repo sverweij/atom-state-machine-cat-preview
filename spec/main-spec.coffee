@@ -1,7 +1,6 @@
 path             = require 'path'
 fs               = require 'fs-plus'
 temp             = require 'temp'
-wrench           = require 'wrench'
 SmCatPreviewView = require '../lib/state-machine-cat-preview-view'
 
 describe "smcat preview package", ->
@@ -10,7 +9,7 @@ describe "smcat preview package", ->
   beforeEach ->
     fixturesPath = path.join(__dirname, 'fixtures')
     tempPath = temp.mkdirSync('atom')
-    wrench.copyDirSyncRecursive(fixturesPath, tempPath, forceDelete: true)
+    fs.copySync(fixturesPath, tempPath)
     atom.project.setPaths([tempPath])
 
     jasmine.useRealClock()
@@ -20,15 +19,6 @@ describe "smcat preview package", ->
 
     waitsForPromise ->
       atom.packages.activatePackage("state-machine-cat-preview")
-
-    # TODO works well. But not when it's also in the program under test.
-    # So now instead wer're having the language-smcat snippets & grammars
-    # included in the package.
-    # waitsForPromise ->
-    #   require('atom-package-deps').install(require('../package.json').name)
-
-    # waitsForPromise ->
-    #   atom.packages.activatePackage('language-smcat')
 
   expectPreviewInSplitPane = ->
     runs ->
