@@ -145,7 +145,7 @@ describe "SmCatPreviewView", ->
     it "state-machine-cat-preview:zoom-to-fit zooms to fit", ->
       atom.commands.dispatch previewPaneItem.element, 'state-machine-cat-preview:zoom-to-fit'
       lSvg = previewPaneItem.imageContainer.find('svg')[0]
-      console.log lSvg.getAttribute('width')
+      
       expect(lSvg.style.zoom).toBe '1'
       expect(lSvg.getAttribute('width')).toBe '100%'
 
