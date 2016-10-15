@@ -23,7 +23,7 @@
   "dependencies": {
     "amdefine": "1.0.0",
     "atom-space-pen-views": "2.2.0",
-    "fs-plus": "2.9.2",
+    "fs-plus": "2.9.3",
     "underscore-plus": "1.6.6",
     "state-machine-cat": "1.0.6"
   },
