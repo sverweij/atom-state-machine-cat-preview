@@ -5,7 +5,7 @@ wrench           = require 'wrench'
 SmCatPreviewView = require '../lib/state-machine-cat-preview-view'
 
 describe "SmCatPreviewView", ->
-  [file, preview, workspaceElement] = []
+  [preview, workspaceElement] = []
 
   beforeEach ->
     filePath = atom.project.getDirectories()[0].resolve('subdir/asample.smcat')

@@ -10,10 +10,6 @@ errRenderer          = null # Defer until used
 svgToRaster          = null # Defer until used
 latestKnownEditorId  = null
 
-zoomFactor           = 1
-originalWidth        = 481
-originalHeight       = 481
-
 module.exports =
 class SmCatPreviewView extends ScrollView
   @content: ->
@@ -37,17 +33,22 @@ class SmCatPreviewView extends ScrollView
 
   constructor: ({@editorId, @filePath}) ->
     super
-    @emitter = new Emitter
-    @disposables = new CompositeDisposable
-    @loaded = false
-    @svg = null
+    @emitter        = new Emitter
+    @disposables    = new CompositeDisposable
+    @loaded         = false
+    @svg            = null
+    @zoomFactor     = 1
+    @renderedSVG    = null
+    @originalWidth  = 481
+    @originalHeight = 481
+    @mode           = 'zoom-manual'
 
     @disposables.add atom.tooltips.add @whiteTransparentBackgroundButton[0], title: "Use white transparent background"
     @disposables.add atom.tooltips.add @blackTransparentBackgroundButton[0], title: "Use black transparent background"
     @disposables.add atom.tooltips.add @transparentTransparentBackgroundButton[0], title: "Use transparent background"
 
-    @zoomInButton.on 'click', => @zoomIn()
-    @zoomOutButton.on 'click', => @zoomOut()
+    @zoomInButton.on 'click',    => @zoomIn()
+    @zoomOutButton.on 'click',   => @zoomOut()
     @resetZoomButton.on 'click', => @resetZoom()
     @zoomToFitButton.on 'click', => @zoomToFit()
 
@@ -80,7 +81,7 @@ class SmCatPreviewView extends ScrollView
   onDidChangeTitle: (callback) ->
     @emitter.on 'did-change-title', callback
 
-  onDidChangeModified: (callback) ->
+  onDidChangeModified: () ->
     # No op to suppress deprecation warning
     new Disposable
 

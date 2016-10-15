@@ -1,7 +1,5 @@
 url      = require 'url'
 fs       = require 'fs-plus'
-path     = require 'path'
-renderer = null
 
 SmCatPreviewView = null # Defer until used
 
@@ -57,14 +55,14 @@ module.exports =
     atom.workspace.addOpener (uriToOpen) ->
       try
         {protocol, host, pathname} = url.parse(uriToOpen)
-      catch error
+      catch
         return
 
       return unless protocol is 'state-machine-cat-preview:'
 
       try
         pathname = decodeURI(pathname) if pathname
-      catch error
+      catch
         return
 
       if host is 'editor'

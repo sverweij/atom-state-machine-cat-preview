@@ -1,7 +1,7 @@
 deHTMLize = (pString) ->
   pString.replace /</g, "&lt;"
 
-renderErrorIntro = (pErrorLocation, pMessage) ->
+renderErrorIntro = (pErrorLocation) ->
   if pErrorLocation
     "error on line #{pErrorLocation.start.line}, column #{pErrorLocation.start.column}"
   else

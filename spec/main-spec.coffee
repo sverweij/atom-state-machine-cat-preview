@@ -3,7 +3,6 @@ fs               = require 'fs-plus'
 temp             = require 'temp'
 wrench           = require 'wrench'
 SmCatPreviewView = require '../lib/state-machine-cat-preview-view'
-{$}              = require 'atom-space-pen-views'
 
 describe "smcat preview package", ->
   [workspaceElement, preview] = []
@@ -85,7 +84,7 @@ describe "smcat preview package", ->
       expect(previewPane.getActiveItem()).toBeUndefined()
 
     it "closes the existing preview when toggle is triggered on it and it has focus", ->
-      [editorPane, previewPane] = atom.workspace.getPanes()
+      previewPane = atom.workspace.getPanes()[1]
       previewPane.activate()
 
       atom.commands.dispatch workspaceElement, 'state-machine-cat-preview:toggle'
