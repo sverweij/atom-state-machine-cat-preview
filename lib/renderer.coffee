@@ -1,4 +1,5 @@
-smcat = null # Defer until used
+smcat   = null
+wrapDot = null
 
 exports.render = (pScript='', pCallback) ->
   smcat ?= require 'state-machine-cat'
@@ -8,4 +9,21 @@ exports.render = (pScript='', pCallback) ->
     outputType : 'svg'
     engine     : atom.config.get('state-machine-cat-preview.layoutEngine') or 'dot'
 
-  smcat.render pScript, lOptions, pCallback
+  if atom.config.get('state-machine-cat-preview.useGraphvizCommandLine')
+    wrapDot ?= require './wrap-dot'
+
+    lOptions.outputType = 'dot'
+    smcat.render pScript, lOptions, (err, dot) ->
+      if err
+        pCallback err
+      else
+        lWrapOptions = {}
+        Object.assign(lWrapOptions, lOptions)
+        lWrapOptions.outputType = 'svg'
+
+        if Boolean atom.config.get('state-machine-cat-preview.GraphvizPath')
+          lWrapOptions.exec = atom.config.get('state-machine-cat-preview.GraphvizPath')
+
+        wrapDot.render dot, pCallback, lWrapOptions
+  else
+    smcat.render pScript, lOptions, pCallback
