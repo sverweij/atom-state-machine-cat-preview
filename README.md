@@ -24,8 +24,8 @@ This software is free software [licensed under GPL-3.0](LICENSE.md). This means 
 it as part of other free software, but _not_ as part of non free software.
 
 ## Build status
-[![Build Status](https://travis-ci.org/sverweij/atom-state-machine-cat-preview.svg?branch=master)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview)
-[![Build status](https://ci.appveyor.com/api/projects/status/4cx2of2rx0s4nxxb?svg=true)](https://ci.appveyor.com/project/sverweij/atom-state-machine-cat-preview)
+[![Build Status on Travis (linux and macOS)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview.svg?branch=master)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview)
+[![Build status on Appveyor (windows)](https://ci.appveyor.com/api/projects/status/4cx2of2rx0s4nxxb?svg=true)](https://ci.appveyor.com/project/sverweij/atom-state-machine-cat-preview)
 [![Dependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview)
 [![devDependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview/dev-status.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview#info=devDependencies)
 
