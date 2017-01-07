@@ -25,11 +25,11 @@
     "atom-space-pen-views": "2.2.0",
     "fs-plus": "2.9.3",
     "underscore-plus": "1.6.6",
-    "state-machine-cat": "1.1.0"
+    "state-machine-cat": "1.1.4"
   },
   "devDependencies": {
     "coffeelint": "1.16.0",
-    "coffeescope2": "0.4.3",
+    "coffeescope2": "0.4.4",
     "temp": "0.8.3"
   },
   "bugs": {
