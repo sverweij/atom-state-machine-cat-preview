@@ -190,7 +190,7 @@ class SmCatPreviewView extends ScrollView
 
         if @mode is 'zoom-to-fit'
           @renderedSVG.attr('width', '100%')
-          @renderedSVG.attr('height', '100%')
+          @renderedSVG.attr('height', @renderedSVG[0].clientHeight * @determineZoomToFitFactor())
         else
           @setZoom @zoomFactor
 
@@ -319,6 +319,9 @@ class SmCatPreviewView extends ScrollView
     @setZoom 1
     @resetZoomButton.text('100%')
 
+  determineZoomToFitFactor: ->
+    scaleFactor = Math.min @imageContainer.context.clientWidth / @renderedSVG[0].clientWidth, @imageContainer.context.clientHeight / @renderedSVG[0].clientHeight
+    Math.min scaleFactor, 1
 
   # Zooms to fit the image
   zoomToFit: ->
@@ -328,7 +331,7 @@ class SmCatPreviewView extends ScrollView
     @mode = 'zoom-to-fit'
     @zoomToFitButton.addClass 'selected'
     @renderedSVG.attr('width', '100%')
-    @renderedSVG.attr('height', '100%')
+    @renderedSVG.attr('height', @renderedSVG[0].clientHeight * @determineZoomToFitFactor())
     @resetZoomButton.text('Auto')
 
   # Changes the background color of the image view.
