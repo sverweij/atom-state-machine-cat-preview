@@ -340,7 +340,3 @@ class SmCatPreviewView extends ScrollView
   changeBackground: (color) ->
     return unless @loaded and @isVisible() and color
     @imageContainer.attr('background', color)
-
-
-  isEqual: (other) ->
-    @[0] is other?[0] # Compare DOM elements
