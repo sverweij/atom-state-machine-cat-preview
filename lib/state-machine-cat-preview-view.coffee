@@ -71,7 +71,7 @@ class SmCatPreviewView extends ScrollView
         @changeBackground $(e.target).attr 'value'
 
   serialize: ->
-    deserializer: 'SmCatPreviewView'
+    deserializer: 'deserializePreviewView'
     filePath: @getPath() ? @filePath
     editorId: @editorId
 

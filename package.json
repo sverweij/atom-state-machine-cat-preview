@@ -19,6 +19,9 @@
   "engines": {
     "atom": "*"
   },
+  "deserializers": {
+      "deserializePreviewView": "deserialize"
+  },
   "readmeFilename": "README.md",
   "dependencies": {
     "amdefine": "1.0.1",

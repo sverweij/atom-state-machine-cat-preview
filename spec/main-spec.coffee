@@ -1,7 +1,7 @@
 path             = require 'path'
 fs               = require 'fs-plus'
 temp             = require 'temp'
-SmCatPreviewView = require '../lib/state-machine-cat-preview-view'
+StateMachineCatPreviewView = require '../lib/state-machine-cat-preview-view'
 
 describe "smcat preview package", ->
   [workspaceElement, preview] = []
@@ -28,7 +28,7 @@ describe "smcat preview package", ->
       preview = atom.workspace.getPanes()[1].getActiveItem()
 
     runs ->
-      expect(preview).toBeInstanceOf(SmCatPreviewView)
+      expect(preview).toBeInstanceOf(StateMachineCatPreviewView)
       expect(preview.getPath()).toBe atom.workspace.getActivePaneItem().getPath()
 
   describe "when a preview has not been created for the file", ->
@@ -168,7 +168,7 @@ describe "smcat preview package", ->
 
       runs ->
         preview = atom.workspace.getActivePaneItem()
-        expect(preview).toBeInstanceOf(SmCatPreviewView)
+        expect(preview).toBeInstanceOf(StateMachineCatPreviewView)
 
         spyOn(preview, 'renderSMCatText')
         preview.file.emitter.emit('did-change')

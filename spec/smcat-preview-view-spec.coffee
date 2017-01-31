@@ -31,23 +31,10 @@ describe "SmCatPreviewView", ->
     afterEach ->
       newPreview?.destroy()
 
-    # TDOO deserialization not implemented
-    xit "recreates the preview when serialized/deserialized", ->
+    it "recreates the preview when serialized/deserialized", ->
       newPreview = atom.deserializers.deserialize(preview.serialize())
       jasmine.attachToDOM(newPreview.element)
       expect(newPreview.getPath()).toBe preview.getPath()
-
-    it "does not recreate a preview when the file no longer exists", ->
-      filePath = path.join(temp.mkdirSync('state-machine-cat-preview-'), 'foo.smcat')
-      fs.writeFileSync(filePath, '# Hi')
-
-      preview.destroy()
-      preview = new SmCatPreviewView({filePath})
-      serialized = preview.serialize()
-      fs.removeSync(filePath)
-
-      newPreview = atom.deserializers.deserialize(serialized)
-      expect(newPreview).toBeUndefined()
 
     it "serializes the editor id when opened for an editor", ->
       preview.destroy()

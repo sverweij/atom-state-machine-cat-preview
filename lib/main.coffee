@@ -1,15 +1,15 @@
 url      = require 'url'
 fs       = require 'fs-plus'
 
-SmCatPreviewView = null # Defer until used
+StateMachineCatPreviewView = null # Defer until used
 
-createSmCatPreviewView = (state) ->
-  SmCatPreviewView ?= require './state-machine-cat-preview-view'
-  new SmCatPreviewView(state)
+createStateMachineCatPreviewView = (state) ->
+  StateMachineCatPreviewView ?= require './state-machine-cat-preview-view'
+  new StateMachineCatPreviewView(state)
 
-isSmCatPreviewView = (object) ->
-  SmCatPreviewView ?= require './state-machine-cat-preview-view'
-  object instanceof SmCatPreviewView
+isStateMachineCatPreviewView = (object) ->
+  StateMachineCatPreviewView ?= require './state-machine-cat-preview-view'
+  object instanceof StateMachineCatPreviewView
 
 module.exports =
   config:
@@ -48,12 +48,15 @@ module.exports =
       # declared localy instead of from smcat.getAllowedValues to prevent a startup time penalty
       enum: ['dot', 'circo', 'fdp', 'neato', 'osage', 'twopi']
 
+  deserialize: (pState) ->
+    createStateMachineCatPreviewView pState
+
   activate: ->
     atom.deserializers.add
-      name: 'SmCatPreviewView'
+      name: 'StateMachineCatPreviewView'
       deserialize: (state) ->
         if state.editorId or fs.isFileSync(state.filePath)
-          createSmCatPreviewView(state)
+          createStateMachineCatPreviewView(state)
 
     atom.commands.add 'atom-workspace',
       'state-machine-cat-preview:toggle': =>
@@ -76,12 +79,12 @@ module.exports =
         return
 
       if host is 'editor'
-        createSmCatPreviewView(editorId: pathname.substring(1))
+        createStateMachineCatPreviewView(editorId: pathname.substring(1))
       else
-        createSmCatPreviewView(filePath: pathname)
+        createStateMachineCatPreviewView(filePath: pathname)
 
   isActionable: ->
-    if isSmCatPreviewView(atom.workspace.getActivePaneItem())
+    if isStateMachineCatPreviewView(atom.workspace.getActivePaneItem())
       atom.workspace.destroyActivePaneItem()
       return
 
@@ -118,8 +121,8 @@ module.exports =
       searchAllPanes: true
     if atom.config.get('state-machine-cat-preview.openPreviewInSplitPane')
       options.split = 'right'
-    atom.workspace.open(uri, options).then (SMCatPreviewView) ->
-      if isSmCatPreviewView(SMCatPreviewView)
+    atom.workspace.open(uri, options).then (pStateMachineCatPreviewView) ->
+      if isStateMachineCatPreviewView(pStateMachineCatPreviewView)
         previousActivePane.activate()
 
   # previewFile: ({target}) ->
