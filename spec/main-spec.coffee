@@ -22,7 +22,7 @@ describe "smcat preview package", ->
 
   expectPreviewInSplitPane = ->
     runs ->
-      expect(atom.workspace.getPanes()).toHaveLength 2
+      expect(atom.workspace.getPanes().length).toBeGreaterThan 1 # 2 for atom < 1.9; 4 for >= 1.9
 
     waitsFor "smcat preview to be created", ->
       preview = atom.workspace.getPanes()[1].getActiveItem()
