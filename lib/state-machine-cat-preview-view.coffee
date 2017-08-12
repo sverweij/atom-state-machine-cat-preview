@@ -266,9 +266,9 @@ class SmCatPreviewView extends ScrollView
 
     if outputFilePath = atom.showSaveDialogSync(filePath)
       if 'png' == pOutputType
-        svgToRaster ?= require './svg-to-raster'
+        svgToRaster ?= require './svgToRaster'
 
-        svgToRaster.transform @svg, (pResult) ->
+        svgToRaster @svg, (pResult) ->
           fs.writeFileSync(outputFilePath, pResult)
           atom.workspace.open(outputFilePath)
       else
