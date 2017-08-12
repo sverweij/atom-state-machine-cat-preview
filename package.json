@@ -28,7 +28,8 @@
     "atom-space-pen-views": "2.2.0",
     "fs-plus": "3.0.1",
     "underscore-plus": "1.6.6",
-    "state-machine-cat": "1.1.5"
+    "state-machine-cat": "1.1.7",
+    "viz.js": "1.8.0"
   },
   "devDependencies": {
     "coffeelint": "1.16.0",
