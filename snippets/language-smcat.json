@@ -1,0 +1,16 @@
+{
+  ".source.smcat": {
+    "smcat skeleton": {
+      "prefix": "fsm",
+      "body": "// states\n# a note for ${1:state_a}\n${1:state_a},\n${3:state_b}: ${4:\"activities\"};\n\n// transitions\ninitial => ${1:state_a};\n${1:state_a} => ${3:state_b}: ${5:\"label\"};\n$6\n${3:state_b} >> final;"
+    },
+    "smcat transition": {
+      "prefix": "tran",
+      "body": "${1:from_state} => ${2:to_state}: ${3:\"label\"};"
+    },
+    "smcat composite state": {
+      "prefix": "comp",
+      "body": "${1:composite_state} {\n  ${2:inner_state_from} => ${3:inner_state_to}: ${4:\"label\"};\n}$5"
+    }
+  }
+}
