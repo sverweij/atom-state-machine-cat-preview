@@ -16,7 +16,7 @@ To make this as easy as possible for you, here's some simple guidelines:
   - If applicable, it is also nice when you provide
     - the **input** you used and
     - the **environment** (browser version/ os, or node.js version + os).
-  - [template](#issue-template) at the bottom
+  - [template](ISSUE_TEMPLATE)
 - In turn, we try to **respond within a week**.    
   This might or might not include an actual code fix.
 
@@ -37,12 +37,3 @@ To make this as easy as possible for you, here's some simple guidelines:
   [GPLv3](LICENSE.md), just like the rest of
   atom-state-machine-cat-preview
 - the code you add is your own original work
-
-### Issue template
-    ### steps taken
-
-    ### expected
-
-    ### found
-
-    ### notes
