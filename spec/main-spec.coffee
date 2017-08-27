@@ -211,5 +211,5 @@ describe "smcat preview package", ->
       expectPreviewInSplitPane()
 
       runs ->
-        expect(preview[0].innerHTML).toContain """<span style="text-decoration:underline">&lt;</span>puthaken&gt;spul&lt;/puthaken&gt;"""
+        expect(preview[0].innerHTML).toContain """puthaken&gt;spul&lt;/puthaken&gt;"""
         expect(preview[0].innerHTML).toContain """error on line 1, column 1"""

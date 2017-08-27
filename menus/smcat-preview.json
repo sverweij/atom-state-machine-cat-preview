@@ -1,0 +1,34 @@
+{
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "State Machine cat Preview",
+          "submenu": [
+            {
+              "label": "Toggle Preview    ^\u21E7V",
+              "command": "state-machine-cat-preview:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "context-menu": {
+    ".state-machine-cat-preview": [
+      {
+        "label": "Copy As SVG",
+        "command": "core:copy"
+      },
+      {
+        "label": "Save As SVG…",
+        "command": "core:save-as"
+      },
+      {
+        "label": "Save As PNG…",
+        "command": "state-machine-cat-preview:save-as-png"
+      }
+    ]
+  }
+}
