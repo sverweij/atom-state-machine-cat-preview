@@ -28,6 +28,19 @@
       {
         "label": "Save As PNG…",
         "command": "state-machine-cat-preview:save-as-png"
+      },
+      {
+        "label": "Direction",
+        "submenu": [
+          {
+            "label": "Top down",
+            "command": "state-machine-cat-preview:direction-top-down"
+          },
+          {
+            "label": "Left to right",
+            "command": "state-machine-cat-preview:direction-left-right"
+          }
+        ]
       }
     ]
   }

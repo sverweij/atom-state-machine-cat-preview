@@ -138,6 +138,8 @@ class SmCatPreviewView extends ScrollView
       'state-machine-cat-preview:zoom-out': => @zoomOut()
       'state-machine-cat-preview:reset-zoom': => @resetZoom()
       'state-machine-cat-preview:zoom-to-fit': => @zoomToFit()
+      'state-machine-cat-preview:direction-top-down': => @setDirection('top-down')
+      'state-machine-cat-preview:direction-left-right': => @setDirection('left-right')
 
     changeHandler = =>
       @renderSMCat()
@@ -340,3 +342,7 @@ class SmCatPreviewView extends ScrollView
   changeBackground: (color) ->
     return unless @loaded and @isVisible() and color
     @imageContainer.attr('background', color)
+
+  setDirection: (direction) ->
+    atom.config.set('state-machine-cat-preview.direction', direction)
+    @renderSMCat()
