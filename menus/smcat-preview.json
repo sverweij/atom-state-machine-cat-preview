@@ -7,7 +7,7 @@
           "label": "State Machine cat Preview",
           "submenu": [
             {
-              "label": "Toggle Preview    ^\u21E7V",
+              "label": "Toggle Preview    ^\u21E7G",
               "command": "state-machine-cat-preview:toggle"
             }
           ]

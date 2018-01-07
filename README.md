@@ -2,7 +2,7 @@
 
 Write beautiful state charts.
 
-Shows the rendered finite state machine diagram of the smcat in your current editor window when you press `ctrl-shift-V`.
+Shows the rendered finite state machine diagram of the smcat in your current editor window when you press `ctrl-shift-G`.
 
 Enabled for `.smcat` files
 

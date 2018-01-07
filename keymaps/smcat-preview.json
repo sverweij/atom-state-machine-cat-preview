@@ -1,6 +1,7 @@
 {
-  "atom-workspace atom-text-editor:not(.mini)[data-grammar~=\"smcat\"]": {
-    "ctrl-V": "state-machine-cat-preview:toggle"
+  "atom-workspace atom-text-editor:not(.mini)[data-grammar='source smcat']": {
+    "ctrl-shift-g": "state-machine-cat-preview:toggle",
+    "ctrl-shift-v": "state-machine-cat-preview:toggle"
   },
   ".platform-darwin .state-machine-cat-preview": {
     "cmd-+": "state-machine-cat-preview:zoom-in",
