@@ -236,6 +236,7 @@
         "amd":false,
         "node": true,
         "browser": true,
-        "jasmine": true
+        "jasmine": true,
+        "atomtest": true
     }
 }
