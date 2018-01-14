@@ -27,6 +27,6 @@
 ### Your Environment
 <!--- Include as many relevant details about the environment you experienced the bug in -->
 * Version used:
-* Node version:
+* Atom version:
 * Operating System and version:
 * Link to your project:
