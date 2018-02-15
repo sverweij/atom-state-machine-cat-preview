@@ -3,7 +3,7 @@
   "version": "2.2.1",
   "main": "./lib/main",
   "description": "Write beautiful state charts",
-  "repository": "https://github.com/sverweij/atom-state-machine-cat-preview",
+  "repository": "git@github.com:sverweij/atom-state-machine-cat-preview.git",
   "keywords": [
     "smcat",
     "state machine",
