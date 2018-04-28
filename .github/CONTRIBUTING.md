@@ -34,6 +34,6 @@ To make this as easy as possible for you, here's some simple guidelines:
 
 ### Legal
 - the code you add will be subject to
-  [GPLv3](LICENSE.md), just like the rest of
+  [the MIT license](LICENSE), just like the rest of
   atom-state-machine-cat-preview
 - the code you add is your own original work

@@ -21,8 +21,7 @@ Enabled for `.smcat` files
   - notes
 
 ## License information
-This software is free software [licensed under GPL-3.0](LICENSE.md). This means (a.o.) you _can_ use
-it as part of other free software, but _not_ as part of non free software.
+This software is free software [licensed under the MIT license](LICENSE). 
 
 ## Build status
 [![Build Status on Travis (linux and macOS)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview.svg?branch=master)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview)
