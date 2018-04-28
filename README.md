@@ -21,7 +21,7 @@ Enabled for `.smcat` files
   - notes
 
 ## License information
-This software is free software [licensed under the MIT license](LICENSE). 
+This software is free software [licensed under the MIT license](LICENSE).
 
 ## Build status
 [![Build Status on Travis (linux and macOS)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview.svg?branch=master)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview)
@@ -29,4 +29,4 @@ This software is free software [licensed under the MIT license](LICENSE).
 [![Dependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview)
 [![devDependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview/dev-status.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview#info=devDependencies)
 
-![doc/pic/smcat-full-small.png](https://gitlab.com/sverweij/state-machine-cat/raw/master/doc/pics/smcat-full-small.png)
+![doc/pic/smcat-full-small.png](https://github.com/sverweij/state-machine-cat/raw/master/docs/pics/smcat-full-small.png)
