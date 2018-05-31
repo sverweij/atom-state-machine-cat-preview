@@ -159,7 +159,7 @@ describe "SmCatPreviewView", ->
       waitsFor ->
         previewPaneItem = atom.workspace.getPanes()[1].getActiveItem()
       runs ->
-        spyOn(atom, 'showSaveDialogSync').andReturn(outputPath)
+        spyOn(atom.applicationDelegate, 'showSaveDialog').andReturn(outputPath)
         atom.commands.dispatch previewPaneItem.element, 'core:save-as'
       waitsFor ->
         fs.existsSync(outputPath)
@@ -180,7 +180,7 @@ describe "SmCatPreviewView", ->
       waitsFor ->
         previewPaneItem = atom.workspace.getPanes()[1].getActiveItem()
       runs ->
-        spyOn(atom, 'showSaveDialogSync').andReturn(outputPath)
+        spyOn(atom.applicationDelegate, 'showSaveDialog').andReturn(outputPath)
         atom.commands.dispatch previewPaneItem.element, 'state-machine-cat-preview:save-as-png'
       waitsFor ->
         fs.existsSync(outputPath)
