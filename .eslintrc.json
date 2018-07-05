@@ -156,7 +156,7 @@
         "lines-around-comment": "off",
         "max-depth": ["error", 3],
         "max-len": [1, 120],
-        "max-nested-callbacks": ["error", 4],
+        "max-nested-callbacks": ["error", 7],
         "max-params": [1, 5],
         "max-statements": [1, 30],
         "max-statements-per-line": ["error", {"max":1}],
