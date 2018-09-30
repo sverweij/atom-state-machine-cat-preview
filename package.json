@@ -1,6 +1,6 @@
 {
   "name": "state-machine-cat-preview",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "main": "./lib/main",
   "description": "Write beautiful state charts",
   "repository": "git@github.com:sverweij/atom-state-machine-cat-preview.git",
