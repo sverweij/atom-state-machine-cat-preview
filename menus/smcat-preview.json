@@ -37,9 +37,17 @@
             "command": "state-machine-cat-preview:direction-top-down"
           },
           {
+            "label": "Bottom top",
+            "command": "state-machine-cat-preview:direction-bottom-top"
+          },
+          {
             "label": "Left to right",
             "command": "state-machine-cat-preview:direction-left-right"
-          }
+        },
+        {
+          "label": "Right to left",
+          "command": "state-machine-cat-preview:direction-right-left"
+        }
         ]
       }
     ]

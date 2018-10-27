@@ -61,7 +61,9 @@
       "description": "The direction to render the state machine in",
       "enum": [
         "top-down",
-        "left-right"
+        "bottom-top",
+        "left-right",
+        "right-left"
       ]
     },
     "layoutEngine": {
