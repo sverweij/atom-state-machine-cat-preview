@@ -138,7 +138,7 @@ describe("SmCatPreviewView", function() {
             atom.commands.dispatch(previewPaneItem.element, 'state-machine-cat-preview:reset-zoom');
             const lSvg = previewPaneItem.imageContainer.find('svg')[0];
             expect(lSvg.style.zoom).toBe('1');
-            return expect(lSvg.getAttribute('width')).toBe('249pt');
+            return expect(lSvg.getAttribute('width')).toBe('253pt');
         });
 
         return it("state-machine-cat-preview:zoom-to-fit zooms to fit", function() {
