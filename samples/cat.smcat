@@ -1,8 +1,12 @@
-eat, sleep, meow, play;
+eat   [color="#008800"],
+sleep [color="blue"],
+meow  [color="red"],
+play  [color="purple"],
+^ [color="pink"]: hatseflats;
 
-sleep -> meow : wake up;
-meow  -> meow : no response from human;
-meow  -> eat  : human gives food;
-meow  -> play : human gives toy;
-play  -> sleep: tired or bored; 
-eat   -> sleep: belly full;
+sleep -> meow  [color="red"]    : wake up;
+meow  -> meow  [color="red"]    : no response from human;
+meow  -> eat   [color="#008800"]: human gives food;
+meow  -> play  [color="purple"] : human gives toy;
+play  -> sleep [color="blue"]   : tired or bored;
+eat   -> sleep [color="blue"]   : belly full;
