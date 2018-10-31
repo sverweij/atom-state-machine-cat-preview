@@ -85,7 +85,7 @@
   "dependencies": {
     "atom-space-pen-views": "2.2.0",
     "fs-plus": "3.0.2",
-    "state-machine-cat": "4.2.0",
+    "state-machine-cat": "4.3.0",
     "underscore-plus": "1.6.8"
   },
   "devDependencies": {

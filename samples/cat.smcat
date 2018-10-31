@@ -1,8 +1,7 @@
 eat   [color="#008800"],
-sleep [color="blue"],
+sleep [color="blue" active],
 meow  [color="red"],
-play  [color="purple"],
-^ [color="pink"]: hatseflats;
+play  [color="purple"];
 
 sleep -> meow  [color="red"]    : wake up;
 meow  -> meow  [color="red"]    : no response from human;
