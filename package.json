@@ -89,10 +89,28 @@
     "underscore-plus": "1.6.8"
   },
   "devDependencies": {
-    "temp": "0.8.3",
-    "eslint": "5.9.0"
+    "eslint": "5.9.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "8.0.0",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "temp": "0.8.3"
   },
   "bugs": {
     "url": "https://github.com/sverweij/atom-state-machine-cat-preview/issues"
+  },
+  "eslintConfig": {
+      "extends": "standard",
+      "rules": {
+          "complexity": [1, 10]
+      },
+      "env": {
+          "amd":false,
+          "node": true,
+          "browser": true,
+          "jasmine": true,
+          "atomtest": true
+      }
   }
 }
