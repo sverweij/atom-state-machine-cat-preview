@@ -1,3 +1,6 @@
+/* asdf
+ *
+*/
 "alarm not set",
 "alarm set" {
     silent => ringing: time >= alarm time;

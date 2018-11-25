@@ -8,6 +8,9 @@
   ],
   "patterns": [
     {
+      "include": "#stateDeclaration"
+    },
+    {
       "include": "#punctuation"
     },
     {
@@ -155,6 +158,9 @@
         }
       ]
     },
+    "stateDeclaration": {
+
+    },
     "attributelist": {
       "begin": ":",
       "beginCaptures": {
@@ -162,7 +168,7 @@
           "name": "punctuation.attributelist.start.smcat"
         }
       },
-      "end": "(;|,|\\{)",
+      "end": "(;|,)",
       "endCaptures": {
         "0": {
           "name": "punctuation.attributelist.end.smcat"

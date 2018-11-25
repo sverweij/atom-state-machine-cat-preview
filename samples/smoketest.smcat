@@ -1,0 +1,37 @@
+/*
+ * kitchensink state machine for
+ * smoke testing the tree-sitter grammar
+ */
+
+// states
+initial,
+# standby,
+# ready for action, ...
+"media player off" [color="red"],
+"media player on" [color="darkgreen"]:
+    "entry/ play welcome message
+    exit/ say goodbye" {
+    // states
+    stopped: entry/ light red,
+    playing [color="darkgreen" active]:
+      "entry/ light green",
+    paused [ color="blue"]:
+      "entry/ blink green";
+
+    // transitions
+    stopped => playing: "play";
+    playing => stopped: "stop";
+    playing => paused: "pause";
+
+    # we might react to the 'play'
+    # event for this transition
+    # as well
+    paused => playing: "pause";
+    paused :> stopped: "stop";
+};
+
+
+// transitions
+initial => "media player off";
+"media player off" => stopped [color="darkgreen"]: power;
+"media player on" => "media player off" [color="red"]: "power";
