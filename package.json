@@ -86,7 +86,7 @@
     "atom-space-pen-views": "2.2.0",
     "fs-plus": "3.0.2",
     "state-machine-cat": "4.4.0",
-    "tree-sitter-smcat": "1.0.0-beta-0",
+    "tree-sitter-smcat": "1.0.0",
     "underscore-plus": "1.6.8"
   },
   "devDependencies": {
