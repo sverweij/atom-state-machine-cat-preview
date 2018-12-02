@@ -12,7 +12,7 @@
       "type": "comment"
     },
     {
-      "type": "states"
+      "type": "state"
     },
     {
       "type": "transitions"
@@ -34,15 +34,15 @@
     "string"                   : "string.smcat",
     "note"                     : "storage.smcat",
     "comment"                  : "comment.block",
-    "arrow"                    : "keyword.operator.smcat",
-    "equals"                   : "keyword.operator.smcat",
-    "colon"                    : "keyword.operator.smcat",
-    "semicolon"                : "keyword.operator.smcat",
-    "comma"                    : "keyword.operator.smcat",
-    "curly_bracket_open"       : "punctuation.begin.bracket.curly.smcat",
-    "curly_bracket_close"      : "punctuation.end.bracket.curly.smcat",
-    "square_bracket_open"      : "punctuation.begin.bracket.square.smcat",
-    "square_bracket_close"     : "punctuation.end.bracket.square.smcat",
+    "arrow"                    : "operator.smcat",
+    "equals"                   : "operator.smcat",
+    "colon"                    : "punctuation.smcat",
+    "semicolon"                : "punctuation.smcat",
+    "comma"                    : "punctuation.smcat",
+    "curly_bracket_open"       : "punctuation.bracket.begin.curly.smcat",
+    "curly_bracket_close"      : "punctuation.bracket.end.curly.smcat",
+    "square_bracket_open"      : "punctuation.bracket.begin.square.smcat",
+    "square_bracket_close"     : "punctuation.bracket.end.square.smcat",
     "state_machine > ERROR, nested_state_machine > ERROR" : "invalid.illegal.smcat",
     "states > ERROR"           : "string.smcat",
     "transitions > ERROR"      : "string.smcat"
