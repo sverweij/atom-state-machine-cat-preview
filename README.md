@@ -14,11 +14,16 @@ Enabled for `.smcat` files
 - **SVG export** - to file or clipboard
 - **PNG export** - to file
 - Uses the pure javascript **[state-machine-cat](https://github.com/sverweij/state-machine-cat)** package for parsing and rendering. That supports most UML state machine elements. Apart from states and transitions:
-  - _initial_, _final_, _choice_, _join_, _fork_ and _history_ pseudo states
+  - _initial_, _final_, _choice_, _join_, _fork_, _junction_, _history_, _deep history_ and _destroy_ pseudo states
   - nested state machines
   - parallel states
   - state activities
+  - transition _events_, _conditions_ and _actions_
   - notes
+
+See the short, illustrated
+[tutorial](https://github.com/sverweij/state-machine-cat/blob/develop/README.md#short-tutorial)
+for details.
 
 ## License information
 This software is free software [licensed under the MIT license](LICENSE).
