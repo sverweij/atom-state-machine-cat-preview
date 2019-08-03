@@ -2,9 +2,9 @@
 
 Write beautiful state charts.
 
-Shows the rendered finite state machine diagram of the smcat in your current editor window when you press `ctrl-shift-G`.
+Shows the rendered finite state machine diagram of the smcat or scxml in your current editor window when you press `ctrl-shift-G`.
 
-Enabled for `.smcat` files
+Enabled for `.smcat`  and `.scxml` files
 
 ![animated gif demoing live preview of a simple state chart](https://raw.githubusercontent.com/sverweij/atom-state-machine-cat-preview/master/assets/atom-state-machine-cat-preview.gif)
 
@@ -20,6 +20,7 @@ Enabled for `.smcat` files
   - state activities
   - transition _events_, _conditions_ and _actions_
   - notes
+- **realtime rendering of SCXML documents**
 
 See the short, illustrated
 [tutorial](https://github.com/sverweij/state-machine-cat/blob/develop/README.md#short-tutorial)

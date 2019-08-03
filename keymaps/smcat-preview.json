@@ -1,5 +1,5 @@
 {
-  "atom-workspace atom-text-editor:not(.mini)[data-grammar='source smcat']": {
+  "atom-workspace atom-text-editor:not(.mini)[data-grammar='source smcat'], atom-workspace atom-text-editor:not(.mini)[data-grammar='source scxml']": {
     "ctrl-shift-g": "state-machine-cat-preview:toggle",
     "ctrl-shift-v": "state-machine-cat-preview:toggle"
   },

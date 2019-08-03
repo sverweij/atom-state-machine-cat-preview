@@ -1,0 +1,18 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0">
+    <state id="eat">
+        <transition event="belly_full" target="sleep"/>
+    </state>
+    <state id="sleep">
+        <transition event="wake_up" target="meow"/>
+    </state>
+    <state id="meow">
+        <transition event="no_response_from_human" target="meow"/>
+        <transition event="human_gives_food" target="eat"/>
+        <transition event="human_gives_toy" target="play"/>
+    </state>
+    <state id="play">
+        <transition event="tired_or_bored" target="sleep"/>
+    </state>
+</scxml>
