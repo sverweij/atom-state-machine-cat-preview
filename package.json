@@ -85,13 +85,13 @@
   "dependencies": {
     "atom-space-pen-views": "2.2.0",
     "fs-plus": "3.1.1",
-    "state-machine-cat": "5.0.6",
+    "state-machine-cat": "5.1.1",
     "underscore-plus": "1.7.0"
   },
   "devDependencies": {
-    "eslint": "6.0.1",
+    "eslint": "6.1.0",
     "eslint-config-standard": "13.0.1",
-    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-import": "2.18.2",
     "eslint-plugin-node": "9.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.0",
