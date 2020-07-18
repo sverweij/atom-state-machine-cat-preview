@@ -13,7 +13,7 @@ build_script:
 
 branches:
   only:
-    - master
+    - main
 
 version: "{build}"
 platform: x64
