@@ -7,7 +7,7 @@
 initial,
 # standby,
 # ready for action, ...
-"media player off" [color="red"],
+"media player off" [color="red" class="yes"],
 "media player on" [color="darkgreen"]:
     "entry/ play welcome message
     exit/ say goodbye" {
