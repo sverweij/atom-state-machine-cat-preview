@@ -30,8 +30,7 @@ for details.
 This software is free software [licensed under the MIT license](LICENSE).
 
 ## Build status
-[![Build Status on Travis (linux and macOS)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview.svg?branch=master)](https://travis-ci.org/sverweij/atom-state-machine-cat-preview)
-[![Build status on Appveyor (windows)](https://ci.appveyor.com/api/projects/status/4cx2of2rx0s4nxxb?svg=true)](https://ci.appveyor.com/project/sverweij/atom-state-machine-cat-preview)
+[![GH Actions](https://github.com/sverweij/atom-state-machine-cat-preview/actions/workflows/ci.yml/badge.svg)](https://github.com/sverweij/atom-state-machine-cat-preview/actions/workflows/ci.yml)
 [![Dependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview)
 [![devDependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview/dev-status.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview#info=devDependencies)
 
