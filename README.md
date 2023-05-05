@@ -1,5 +1,13 @@
 # Atom _State Machine Cat_ Preview package
 
+
+<hr/>
+
+### :warning: status 2023-05-05: _archived_
+As the [atom editor is no more](https://github.blog/2022-06-08-sunsetting-atom/), this plugin is _archived_ and will not be maintained anymore.
+
+<hr/>
+
 Write beautiful state charts.
 
 Shows the rendered finite state machine diagram of the smcat or scxml in your current editor window when you press `ctrl-shift-G`.
@@ -28,10 +36,3 @@ for details.
 
 ## License information
 This software is free software [licensed under the MIT license](LICENSE).
-
-## Build status
-[![GH Actions](https://github.com/sverweij/atom-state-machine-cat-preview/actions/workflows/ci.yml/badge.svg)](https://github.com/sverweij/atom-state-machine-cat-preview/actions/workflows/ci.yml)
-[![Dependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview)
-[![devDependency Status](https://david-dm.org/sverweij/atom-state-machine-cat-preview/dev-status.svg)](https://david-dm.org/sverweij/atom-state-machine-cat-preview#info=devDependencies)
-
-![doc/pic/smcat-full-small.png](https://github.com/sverweij/state-machine-cat/raw/master/docs/pics/smcat-full-small.png)
